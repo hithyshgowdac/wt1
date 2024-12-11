@@ -1,0 +1,192 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    width: 80%;
+  }
+  
+  h1, p {
+    color: #fff;
+    padding: 15px;
+  }
+  
+  /* Profile Section */
+  .profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .profile-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .text-section {
+    margin-left: 20px;
+  }
+  
+  .glow-on-hover {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+  }
+  
+  .glow-on-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: #e5ff00;
+    color:#121212;
+    transition: 0.4s;
+    transform: translateX(-50%) scale(0);
+    border-radius: 50%;
+    animation: glowing 1.2s ease-in-out infinite;
+  }
+  
+  .glow-on-hover:hover {
+    color: #121212;
+    background-color: #fff;
+    box-shadow: 0 0 15px 5px rgba(228, 253, 85, 0.5);
+  }
+  
+  .glow-on-hover:hover::before {
+    transform: translateX(-50%) scale(1);
+  }
+  
+  /* Name Typing Effect */
+  #name {
+    font-size: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    animation: typing 3s steps(30) 1s forwards, blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    50% { border-color: transparent; }
+  }
+  
+  /* Bio Data Page */
+  .bio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+  }
+  
+  .bio-content {
+    background-color: #333;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .bio-list {
+    list-style: none;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  .social-icons {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between icons */
+    padding: 10px 0;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    width: 40px; /* Set the width of the icon */
+    height: 40px; /* Set the height of the icon */
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon:hover .social-image {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  /* Style for social media images */
+  .social-image {
+    width: 100%; /* Make sure the image takes the full width of the container */
+    height: 100%; /* Make the image height match the width */
+    transition: all 0.3s ease;
+  }
+  
+  /* Resume Page */
+  .resume-container {
+    padding: 40px;
+    background-color: #121212;
+    text-align: center;
+  }
+  
+  .education-table, .projects-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  .education-table th, .education-table td, .projects-table th, .projects-table td {
+    padding: 10px;
+    border: 1px solid #fff;
+  }
+  
+  .education-table tr:hover, .projects-table tr:hover {
+    background-color: #333;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid #fff;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .profile-section {
+      flex-direction: column;
+    }
+  }
+  
